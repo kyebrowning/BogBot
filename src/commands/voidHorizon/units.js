@@ -2,18 +2,13 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
 const fs = require('node:fs');
 const Papa = require('papaparse');
 const csvString = fs.readFileSync('src/csv/units.csv', { encoding: 'utf-8' });
-const { data } = Papa.parse(csvString);
+const { data } = Papa.parse(csvString, { header: true});
 const { EmbededBuilder } = require('discord.js')
 
+// const unitName = interaction.options.getSubcommand();
 
-// const optionNames = data
-//     .slice(1)
-//     .map((row) => row[0])
-//     .map((name) => name.toLowerCase().replace(' ', '-'));
+// const unit = data.find(row => row.Unit.toLowerCase().replaceAll(' ','-') === unitName);
 
-const titleNames = data[0];
-
-console.log(titleNames);
 
 module.exports = {
     name: 'vh',
@@ -40,12 +35,12 @@ module.exports = {
                     type: ApplicationCommandOptionType.Subcommand,
                 },
                 {
-                    name: 'lav',
+                    name: 'light-armored-vehicle',
                     description: 'Light Armored Vehicle Base Stats',
                     type: ApplicationCommandOptionType.Subcommand,
                 },
                 {
-                    name: 'hav',
+                    name: 'heavy-armored-vehicle',
                     description: 'Heavy Armored Vehicle Base Stats',
                     type: ApplicationCommandOptionType.Subcommand,
                 },
@@ -61,39 +56,44 @@ module.exports = {
     ],
 
     callback: (client, interaction) => {
+
+        const unitName = interaction.options.getSubcommand();
+
+        const unit = data.find(row => row.Unit.toLowerCase().replaceAll(' ','-') === unitName);
+
         interaction.reply({embeds: [new EmbedBuilder()
-             .setTitle(interaction.options.getSubcommand('units'))
-             .setDescription(interaction.options.get('value'))
+             .setTitle(unit.Unit)
+             .setDescription(`${unit.Unit} Base Stats`)
              .addFields(
                 {
                     name: 'Points',
-                    value: '1',
+                    value: unit.Points.toString(),
                     inline: true,
 
                 },
                 {
                     name: 'Move',
-                    value: '1',
+                    value: unit.Move.toString(),
                     inline: true,
                 },
                 {
                     name: 'Combat',
-                    value: '1',
+                    value: unit.Combat.toString(),
                     inline: true,
                 },
                 {
                     name: 'Defense',
-                    value: '1',
+                    value: unit.Defense.toString(),
                     inline: true,
                 },
                 {
                     name: 'Morale',
-                    value: '1',
+                    value: unit.Morale.toString(),
                     inline: true,
                 },
                 {
                     name: 'Range',
-                    value: '1',
+                    value: unit.Range.toString(),
                     inline: true,
                 },
 

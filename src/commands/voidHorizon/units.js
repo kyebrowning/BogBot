@@ -1,3 +1,5 @@
+const { ApplicationCommandOptionType } = require("discord.js");
+
 module.exports = {
     name: 'vh',
     description: 'Rules and Unit lookup for Void Horizon',
@@ -20,7 +22,7 @@ module.exports = {
                 {
                     name: 'heavy-infantry',
                     description: 'Heavy Infantry Base Stats',
-                    type: 1,
+                    type: ApplicationCommandOptionType.Subcommand,
                 },
                 {
                     name: 'lav',

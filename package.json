@@ -12,6 +12,7 @@
   "dependencies": {
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
-    "googleapis": "^110.0.0"
+    "googleapis": "^110.0.0",
+    "papaparse": "^5.3.2"
   }
 }

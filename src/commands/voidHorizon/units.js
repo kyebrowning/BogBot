@@ -5,7 +5,19 @@ const csvStringUnit = fs.readFileSync('src/csv/units2.csv', { encoding: 'utf-8' 
 const { data } = Papa.parse(csvStringUnit, { header: true});
 const { EmbededBuilder } = require('discord.js')
 
+const keywords = data.slice(6).map(row => row.Keyword.toLowerCase());
+const keywordCommands = keywords.map(keywords => {
+    return {
+        name: keywords.replaceAll(' ','-').toLowerCase(),
+        description: 'Keyword Definition',
+        type: ApplicationCommandOptionType.Subcommand,
+    }
+}); 
 
+
+const keywords1 = keywordCommands.slice(0,25);
+const keywords2 = keywordCommands.slice(25,50);
+const keywords3 = keywordCommands.slice(50);
 
 module.exports = {
     name: 'vh',
@@ -50,14 +62,36 @@ module.exports = {
             ],
 
         },
+        {
+            name: 'keyword1',
+            description: 'Keyword SubGroup 1',
+            type: ApplicationCommandOptionType.SubcommandGroup,
+            options: keywords1,
+            
+        },
+        {
+            name: 'keyword2',
+            description: 'Keyword SubGroup 2',
+            type: ApplicationCommandOptionType.SubcommandGroup,
+            options: keywords2,
+            
+        },
+        {
+            name: 'keyword3',
+            description: 'Keyword SubGroup 3',
+            type: ApplicationCommandOptionType.SubcommandGroup,
+            options: keywords3,
+            
+        },
     ],
 
     callback: (client, interaction) => {
 
         const unitName = interaction.options.getSubcommand();
+        const kwCommand = interaction.options.getSubcommand();
 
         const unit = data.find(row => row.Unit.toLowerCase().replaceAll(' ','-') === unitName);
-
+        const kw =data.find(row => row.Keyword.toLowerCase().replaceAll(' ',"-") === kwCommand);
         if(interaction.options.getSubcommandGroup() === 'unit') {
             interaction.reply({embeds: [new EmbedBuilder()
                 .setTitle(unit.Unit)
@@ -98,7 +132,23 @@ module.exports = {
                 )
                
            ]});
-        }
+        } else {interaction.reply({embeds: [new EmbedBuilder()
+                    .setTitle(kw.Keyword)
+                    .addFields(
+                        {
+                            name: 'Points',
+                            value: kw.Points.toString(),
+                            inline: true,
+    
+                        },
+                        {
+                            name: 'Definition',
+                            value: kw.Description.toString(),
+                            inline: true,
+                        },
+                    )
+                ]});    
+            }   
 
         
             

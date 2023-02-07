@@ -1,13 +1,10 @@
 const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
 const fs = require('node:fs');
 const Papa = require('papaparse');
-const csvString = fs.readFileSync('src/csv/units.csv', { encoding: 'utf-8' });
-const { data } = Papa.parse(csvString, { header: true});
+const csvStringUnit = fs.readFileSync('src/csv/units2.csv', { encoding: 'utf-8' });
+const { data } = Papa.parse(csvStringUnit, { header: true});
 const { EmbededBuilder } = require('discord.js')
 
-// const unitName = interaction.options.getSubcommand();
-
-// const unit = data.find(row => row.Unit.toLowerCase().replaceAll(' ','-') === unitName);
 
 
 module.exports = {
@@ -61,45 +58,51 @@ module.exports = {
 
         const unit = data.find(row => row.Unit.toLowerCase().replaceAll(' ','-') === unitName);
 
-        interaction.reply({embeds: [new EmbedBuilder()
-             .setTitle(unit.Unit)
-             .setDescription(`${unit.Unit} Base Stats`)
-             .addFields(
-                {
-                    name: 'Points',
-                    value: unit.Points.toString(),
-                    inline: true,
+        if(interaction.options.getSubcommandGroup() === 'unit') {
+            interaction.reply({embeds: [new EmbedBuilder()
+                .setTitle(unit.Unit)
+                .setDescription(`${unit.Unit} Base Stats`)
+                .addFields(
+                   {
+                       name: 'Points',
+                       value: unit.Points.toString(),
+                       inline: true,
+   
+                   },
+                   {
+                       name: 'Move',
+                       value: unit.Move.toString(),
+                       inline: true,
+                   },
+                   {
+                       name: 'Combat',
+                       value: unit.Combat.toString(),
+                       inline: true,
+                   },
+                   {
+                       name: 'Defense',
+                       value: unit.Defense.toString(),
+                       inline: true,
+                   },
+                   {
+                       name: 'Morale',
+                       value: unit.Morale.toString(),
+                       inline: true,
+                   },
+                   {
+                       name: 'Range',
+                       value: unit.Range.toString(),
+                       inline: true,
+                   },
+   
+                )
+               
+           ]});
+        }
 
-                },
-                {
-                    name: 'Move',
-                    value: unit.Move.toString(),
-                    inline: true,
-                },
-                {
-                    name: 'Combat',
-                    value: unit.Combat.toString(),
-                    inline: true,
-                },
-                {
-                    name: 'Defense',
-                    value: unit.Defense.toString(),
-                    inline: true,
-                },
-                {
-                    name: 'Morale',
-                    value: unit.Morale.toString(),
-                    inline: true,
-                },
-                {
-                    name: 'Range',
-                    value: unit.Range.toString(),
-                    inline: true,
-                },
-
-             )
+        
             
-        ]});
+    
     }   
 };
   

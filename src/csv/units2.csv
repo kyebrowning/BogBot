@@ -1,0 +1,64 @@
+Unit,Move,Combat,Defense,Morale,Range,Points,Keyword,Description
+Rabble,"4""",8+,8+,3,"10""",30,,
+Light Infantry,"4""",7+,7+,4,"10""",50,,
+Heavy Infantry,"4""",6+,6+,5,"10""",70,,
+Light Armored Vehicle,"7""",6+,5+,6,"15""",90,,
+Heavy Armored Vehicle,"6""",5+,4+,6,"15""",110,,
+War Behemoth,"4""",4+,4+,8,"20""",150,,
+,,,,,,25,Accurate,Units with this keyword may shoot into units that are in close combat.
+,,,,,,15,Advanced Deployment,"After all units have deployed, units with this keyword may redeploy up to 10” from their starting deployment."
+,,,,,,15,Armor Piercing,"While making an attack against an opposing unit, reduce the unit’s Defense value by 1. (May be taken up to twice, paying the cost of the upgrade each time)"
+,,,,,,10,Armored,"Improve this unit’s Defense by 1. (Infantry units may purchase this upgrade twice). If taken on a vehicle unit, this cost 20 and decreases your Move by 1”."
+,,,,,,0,Artillery,"Reduce this unit’s Movement speed by half, rounded down, increase its range by 5”."
+,,,,,,15,Assault,"When this unit makes a close combat attack and causes stress, the defending unit takes 2 additional stress."
+,,,,,,-15,Bad Shot,Reduce this unit’s Combat stat by 1 when making ranged attacks. This trait cannot be taken on a unit with the Close Combat or Flame Weapons keyword.
+,,,,,,10,Beserk ++,Friendly unit within LOS gains +2 to their next Close Combat attack.
+,,,,,,30,Blast,"After a unit resolves an attack on an enemy unit, it may use the dice that did not hit to make an attack on a different enemy unit within 3”, and my continue doing so, measuring range from the most recent targeted unit, until either there are no more dice available or no more enemy units in range. You may not target an enemy unit more than once during this attack."
+,,,,,,25,Body Guard,"If this unit is within 3” and LOS of a friendly unit that is being targeted by a Range Combat attack, this unit becomes the new target, even if its outside of range and LOS of the enemy attacking unit."
+,,,,,,15,Bombardment,"This unit may ignores level 1 terrain while drawing LOS to target an enemy unit, but reduces its Ranged Combat attack by 1 for attacks made this way."
+,,,,,,15,Camouflage,This unit cannot be targeted by an enemy unit more than 12” away.
+,,,,,,-10,Close Combat,This unit loses its ability to make Ranged Combat attacks and gains a +1 bonus to its Close Combat attack stat. This trait cannot be taken on a unit with the Bad Shot keyword.
+,,,,,,15,Coerce ++,You may perform a Move action with an enemy unit within LOS. 
+,,,,,,5,Courageous,Increase this unit’s Morale by 1.
+,,,,,,-5,Cowardly,Reduce this unit’s Morale by 1.
+,,,,,,15,Crack Shot,Increase the unit’s Combat stat by 1 when making ranged attacks.
+,,,,,,10,Entice ++,"Friendly unit, without an activation token, within LOS may immediately perform one action."
+,,,,,,15,Exploding,"When this unit routes, all units (friendly and enemy), within 5” must immediately make a Defense roll against 10 hits."
+,,,,,,10,Fast,Increase this unit’s Move stat by 2”.
+,,,,,,15,Field Commander,"If your leader is removed from the play field, this unit can become your new leader but only gaining +1 to your Morale value, instead of +2. Note: May only be taken once per army."
+,,,,,,25,Fire Support,"Units with this keyword, without an activation token, within range and LOS of the declared target may choose to add their 1st attack dice pool, and any keywords, to the attacking unit. After the attack, place an activation on the unit that used fire support."
+,,,,,,10,Flame Weapons,"Reduce this units weapon range to 5”. Ranged Combat attacks with this unit, hit automatically. Targeted enemy unit makes its Defense save as normal."
+,,,,,,15,Flying,This unit may move through terrain and ignores movement penalties while doing so. This unit also ignores level 1 terrain while drawing LOS to target an enemy unit.
+,,,,,,50,Force Field,Friendly units within 5” of this unit have a defense of 4+.
+,,,,,,10,Haste ++,"Friendly unit within LOS gains 2” to their Move, until the end of the round."
+,,,,,,15,Heavy Fire,"When a unit with this keyword makes a ranged combat attack and causes stress, the defending unit takes 2 additional stress."
+,,,,,,20,Hive Mind,"After the Push Phase, but before the Morale Phase, units with this keyword may move up to half of their stress, rounded down, to another unit with this keyword. A unit may only receive or remove stress once per round in this way."
+,,,,,,-20,Immobile,Reduce this unit’s Movement speed to 0”.
+,,,,,,15,Inspiring,Friendly units within 5” of the unit with this keyword gain +1 to their Morale anytime the unit makes a morale check.
+,,,,,,0,Leader,"Increase this unit’s Morale by 2. During the Morale Phase, any friendly unit(s) within 5” of this unit, may use this unit’s morale value for its morale check. May only be taken once per army."
+,,,,,,10,Lifesteal,"When a unit makes a Close Combat attack, after stress has been resolved, this unit may roll d10 equal to the amount of stress given to the enemy unit. For each 8+, remove 1 stress from this unit."
+,,,,,,10,Long Range Weapons,"Add 5” inches to this unit’s Range. (May be taken up to twice, paying the cost of the upgrade each time). This keyword costs 20 points if coupled with the flame weapons keyword."
+,,,,,,20,Mechanic,"This unit may remove 2 stress from a friendly vehicle unit within 1"". You may only perform this actions once per round."
+,,,,,,20,Medic,"This unit may remove 3 stress from a friendly infantry unit within 1"". You may only perform this action once per round."
+,,,,,,10,Pathfinder,This unit ignores movement penalties while moving through rough terrain.
+,,,,,,15,Regeneration,"At the end of the Morale Phase, this unit may roll a number of d10 equal to its morale value. For each 8+, remove 1 stress from this unit."
+,,,,,,-10,Slow,Decrease this unit’s Move stat by 2”.
+,,,,,,10,Slow ++,"Enemy unit within LOS loses 2” to their Move, until the end of the round."
+,,,,,,10,Smite ++,Target enemy unit in LOS makes 5 defense rolls.
+,,,,,,15,Soothe ++,Remove 3 stress from a friendly unit within LOS.
+,,,,,,15,Steady,"Units with this keyword, may use an action to increase their Range Combat value +1 until the end of the round."
+,,,,,,25,Stoic,Friendly units within 10” of the unit with this keyword gain +1 to their Morale anytime the unit makes a morale check.
+,,,,,,15,Summon ++,"During the deplyment phase, elect a summoned unit. This unit does not deploy with your army. Instead, they may be placed anywhere within LOS of the summoning unit."
+,,,,,,5,Swarm,Units with the same keyword and within 3” of each other may activate as one unit.
+,,,,,,15,Take Aim ++,Friendly unit within LOS gains +2 to their next Ranged Combat attack.
+,,,,,,15,Terror,"After a unit with this keyword has made a Close Combat attack and has dealt stress, the enemy unit must immediately perform a Morale check."
+,,,,,,10,Transport,"Before the game, you may denote one infantry unit to be transported by this vehicle. The transported unit gains the Disembark keyword. 
+
+Disembark: This unit uses its first action to be placed in base contact with the vehicle transporting this unit. This unit may then take a second action as normal. NOTE: This action is the only action this unit can perform on their activation. Once an infantry unit has used this keyword, it not longer has said keyword.
+"
+,,,,,,40,Turn the Tides ++,Target one friendly unit within LOS that has an activation token and remove it - OR - target one enemy unit within LOS without an activation token and place one on the targeted unit.  
+,,,,,,20,War Weary ++,Force an enemy unit within LOS to immediately make a morale check.
+,,,,,,20,Warlord,Increase your leader’s Morale leadership area of effect to 10”.
+,,,,,,25,Warp,"During the deplyment phase, this unit does not deploy with your army. Instead, they may be placed anywhere within 10” and LOS of your leader any time after round 1. May not warp into Close Combat."
+,,,,,,15,Weapon Overload,"Each unmodified 10 in this unit’s attack pool counts as an additional successful hit. Additionally, this unit receives one stress for each unmodified 1 in this attack pool. Note: A unit with this weapon trait may choose if they want to use this ability in each attack, but must declare so prior to rolling dice for the attack."
+,,,,,,10,Zealous,"Once this unit's stress is equal to or greater than their Morale value, they increase their Combat value by 1."

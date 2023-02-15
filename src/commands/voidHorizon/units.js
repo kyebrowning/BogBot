@@ -1,7 +1,7 @@
 const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
 const fs = require('node:fs');
 const Papa = require('papaparse');
-const csvStringUnit = fs.readFileSync('src/csv/units2.csv', { encoding: 'utf-8' });
+const csvStringUnit = fs.readFileSync('src/csv/unitsAndKeywords.csv', { encoding: 'utf-8' });
 const { data } = Papa.parse(csvStringUnit, { header: true});
 const { EmbededBuilder } = require('discord.js')
 
